@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row mt-3">
+    <h1>Contact List</h1>
+  </div>
+  <div class="row my-3">
+    <div class="col-md-7">
+
+      <table class="table table-striped table-hover table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contacts.forEach((contact,i) => { %>
+            <tr>
+              <th scope="row"><%= i+1 %></th>
+              <td><%= contact.nama %></td>
+              <td><%= contact.noHP %></td>
+              <td> <a class="badge rounded-pill bg-primary" href="/contact/<%=contact.nama %>"> <i class="bi bi-info-circle"> </i>Detail </i></a> </td>
+            </tr>
+           
+          <% }) %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

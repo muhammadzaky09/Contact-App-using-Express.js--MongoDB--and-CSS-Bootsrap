@@ -1,0 +1,18 @@
+{
+  "name": "contact-app",
+  "version": "1.0.0",
+  "description": "Contact Application with Express.js and MongoDB",
+  "main": "App.js",
+  "scripts": {
+    "start": "node App",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Zaky",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "validator": "^13.11.0"
+  }
+}

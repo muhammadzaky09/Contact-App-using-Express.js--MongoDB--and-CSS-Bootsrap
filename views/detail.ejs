@@ -1,0 +1,19 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Detail Contact</h2>
+
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= contact.nama %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= contact.noHP %></h6>
+                  <p class="card-text"> <%= contact.email %></p>
+                  <a href="#" class="card-link badge rounded-pill bg-primary">Update</a>
+                  <a href="#" class="card-link badge rounded-pill bg-danger" onclick="confirm()">Delete</a>
+                  <a href="/contact" class="card-link d-block">&laquo;Return to contact list</a>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>
