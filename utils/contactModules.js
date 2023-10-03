@@ -21,4 +21,42 @@ const loadDetail = (nama) => {
     return contacts.find(contact => contact.nama.toLowerCase() === nama.toLowerCase());
 }
 
-module.exports = {loadContact,loadDetail};
+const saveContacts = (contacts) => {
+    fs.writeFileSync('data/contacts.json', JSON.stringify(contacts))
+
+}
+
+const addContact = (contact) => {
+    const contacts = loadContact();
+    contacts.push(contact);
+    saveContacts(contacts);
+}
+
+const duplicateCheck = (nama) => {
+    const contacts = loadContact();
+    return contacts.find((contact) => contact.nama.toLowerCase() == nama.toLowerCase());
+}
+
+const deleteContact = (nama) => {
+    const contacts = loadContact();
+    const filteredContacts = contacts.filter((contact) => contact.nama !== nama);
+    saveContacts(filteredContacts);
+}
+
+const findContact = (nama) => {
+    const contacts = loadContact();
+    const contact = contacts.find((contact) => contact.nama.toLowerCase() === nama.toLowerCase());
+    return contact;
+
+}
+
+const updateContacts = (newContact) => {
+    const contacts = loadContact();
+    const filteredContacts = contacts.filter((contact) => contact.nama !== newContact.oldNama);
+    delete newContact.oldNama;
+    filteredContacts.push(newContact);
+    saveContacts(filteredContacts)
+
+}
+
+module.exports = {loadContact,loadDetail,addContact,duplicateCheck, findContact, deleteContact,updateContacts};
